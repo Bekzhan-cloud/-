@@ -1,0 +1,43 @@
+//
+//  main.cpp
+//  BEk
+//
+//  Created by iMac-13 on 4/2/25.
+//
+
+#include <iostream>
+using namespace std;
+struct Time{
+    int second;
+    int hours;
+    int minut;
+};
+void input(Time&BEK1){
+    cout << "Введите время:" << endl;
+    cout << "Часы: ";
+    cin >> BEK1.hours;
+    cout << "Минуты: ";
+    cin >> BEK1.minut;
+    cout << "Секунды: ";
+    cin >> BEK1.second;
+    
+};
+long calculate(const Time&BEK1){
+    return BEK1.hours*3600 + BEK1.minut*60 + BEK1.second;
+};
+void output(long totalSecs){
+    cout << "Общее количество секунд: " << totalSecs << endl;
+};
+int main(){
+    Time BEK1;
+
+        // Ввод времени
+        input(BEK1);
+
+        // Вычисление общего числа секунд
+        long totalSecs = calculate(BEK1);
+
+        // Вывод результата
+        output(totalSecs);
+    return 0;
+}
