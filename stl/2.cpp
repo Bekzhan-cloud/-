@@ -2,30 +2,37 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include  <windows.h>
+#include <windows.h>
 using namespace std;
 
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    vector<string> words;
-    string word;
 
-    cout << "Введите слова (для завершения введите 'end'):" << endl;
+    vector<string> words;
+    string input;
+
+    cout << "Введите слова по одному (для окончания введите 'end'):" << endl;
+
     while (true) {
-        cin >> word;
-        if (word == "end") break;
-        words.push_back(word);
+        getline(cin, input);
+        if (input == "end") {
+            break;
+        }
+        if (!input.empty()) {
+            words.push_back(input);
+        }
     }
 
     sort(words.begin(), words.end());
 
-    cout << "Отсортированные слова:" << endl;
-    for (size_t i = 0; i < words.size(); i++) {
-        cout << words[i] << " ";
+    cout << "\nОтсортированные слова:\n";
+    for (const auto& w : words) {
+        cout << w << " ";
     }
     cout << endl;
 
     return 0;
 }
+
 

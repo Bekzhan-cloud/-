@@ -9,7 +9,7 @@ using namespace std;
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    vector<string> names = { "Малика", "Айжамал", "Жоомарт", "Бека", "Куба" };
+    vector<string> names = { "Шкипер", "Ковальски", "Рико", "Бека", "Прапор" };
     string SearchName;
     cout << "Введите имя, которое ищите: "; cin >> SearchName;
 
